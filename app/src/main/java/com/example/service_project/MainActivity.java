@@ -8,12 +8,23 @@ import android.util.DisplayMetrics;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
+
+    // Write a message to the database
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("message");
+
+
     LinearLayout ll;
     int ScreenHeight,ScreenWidth;
     DisplayMetrics displayMetrics;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        myRef.setValue("Hello, World!");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ll = findViewById(R.id.ll);

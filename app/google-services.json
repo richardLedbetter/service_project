@@ -1,0 +1,101 @@
+{
+  "project_info": {
+    "project_number": "956476816755",
+    "firebase_url": "https://tripsplit-b93a9.firebaseio.com",
+    "project_id": "tripsplit-b93a9",
+    "storage_bucket": "tripsplit-b93a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956476816755:android:cdc9b292e9b57134bf1906",
+        "android_client_info": {
+          "package_name": "com.example.service_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956476816755-qdepn3u7g9qkg4ovac3bac4dqkr9u10b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.service_project",
+            "certificate_hash": "003febd934feb720bd048a1ab633511462815cba"
+          }
+        },
+        {
+          "client_id": "956476816755-jl7n1mderkqjch97tm5o7dnh1o9h8o3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF3GYUtZlNgtwqc21YHYBZHI3BEguX22Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956476816755-jl7n1mderkqjch97tm5o7dnh1o9h8o3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956476816755:android:193dd93a60fe2bbbbf1906",
+        "android_client_info": {
+          "package_name": "com.example.tripsplit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956476816755-rp3jb4ifnjoaded800i0jlmp16h2d8vb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tripsplit",
+            "certificate_hash": "27f5ce69cf065aee4c276637117a58e510d5c6c8"
+          }
+        },
+        {
+          "client_id": "956476816755-dbn8nurflv3j01docnnlttmrh7na8jdi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tripsplit",
+            "certificate_hash": "003febd934feb720bd048a1ab633511462815cba"
+          }
+        },
+        {
+          "client_id": "956476816755-df8i7mr84behjscs9rt3e5iv5459k0qa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tripsplit",
+            "certificate_hash": "db716e59845e417bb6aa0b235c3f0f26609be2ec"
+          }
+        },
+        {
+          "client_id": "956476816755-jl7n1mderkqjch97tm5o7dnh1o9h8o3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF3GYUtZlNgtwqc21YHYBZHI3BEguX22Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956476816755-jl7n1mderkqjch97tm5o7dnh1o9h8o3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

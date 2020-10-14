@@ -2,6 +2,7 @@ package com.example.service_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.media.Image;
@@ -57,6 +58,8 @@ public class park_detail extends AppCompatActivity {
             issue.setOnClickListener(v1->{
                 if(content.getVisibility()==LinearLayout.GONE){
                     content.setVisibility(LinearLayout.VISIBLE);
+                    Intent next_page = new Intent(this,time_card.class);
+                    startActivity(next_page);
                 }else{
                     content.setVisibility(LinearLayout.GONE);
                 }

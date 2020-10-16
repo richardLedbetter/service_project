@@ -13,9 +13,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Write a message to the database
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
 
 
     LinearLayout ll;
@@ -24,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        myRef.setValue("Hello, World!");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ll = findViewById(R.id.ll);
@@ -35,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         set_up();
     }
     public void set_up(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+        myRef.setValue("Hello, World!");
         for (int i =0;i<10;i++){
             Button b = new Button(this);
             b.setText("Park"+ Integer.toString(i));

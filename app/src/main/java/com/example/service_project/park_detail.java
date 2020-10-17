@@ -2,12 +2,16 @@ package com.example.service_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.Spinner;
@@ -57,12 +61,18 @@ public class park_detail extends AppCompatActivity {
             //drop down menu content
             Button issue2 = new Button(this);
             issue2.setWidth(5000);
+            ImageView im = new ImageView(this);
+
+            //im.setImageBitmap(Image);
+            issue2.setText("fix");
             content.addView(issue2);
 
             //drop down menu action
             issue.setOnClickListener(v1->{
                 if(content.getVisibility()==LinearLayout.GONE){
                     content.setVisibility(LinearLayout.VISIBLE);
+                    Intent next_page = new Intent(this,time_card.class);
+                    startActivity(next_page);
                 }else{
                     content.setVisibility(LinearLayout.GONE);
                 }

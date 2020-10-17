@@ -12,12 +12,25 @@ import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.Spinner;
 
+import com.example.service_project.Model.Park;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class park_detail extends AppCompatActivity {
+
+    private DatabaseReference mDatabase;
+// ...
+
+
+
     LinearLayout ll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_park_detail);
         ll = findViewById(R.id.park_d_ll);

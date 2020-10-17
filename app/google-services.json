@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "95700117341",
+    "firebase_url": "https://parksnrec-88059.firebaseio.com",
+    "project_id": "parksnrec-88059",
+    "storage_bucket": "parksnrec-88059.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95700117341:android:90dee19ac6cda0179e6ab4",
+        "android_client_info": {
+          "package_name": "com.example.service_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95700117341-c48voh8u3v56p2e5kdfhin6jm3u7e9h1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw_CG-zqlHEGUiX855cF3DCb9og7vNyjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95700117341-c48voh8u3v56p2e5kdfhin6jm3u7e9h1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

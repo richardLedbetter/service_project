@@ -1,20 +1,34 @@
 {
   "project_info": {
+<<<<<<< HEAD
+    "project_number": "95700117341",
+    "firebase_url": "https://parksnrec-88059.firebaseio.com",
+    "project_id": "parksnrec-88059",
+    "storage_bucket": "parksnrec-88059.appspot.com"
+=======
     "project_number": "956476816755",
     "firebase_url": "https://tripsplit-b93a9.firebaseio.com",
     "project_id": "tripsplit-b93a9",
     "storage_bucket": "tripsplit-b93a9.appspot.com"
+>>>>>>> 2386a0e37218ec338f5e7f9075805d32c9d7c963
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
+        "mobilesdk_app_id": "1:95700117341:android:90dee19ac6cda0179e6ab4",
+=======
         "mobilesdk_app_id": "1:956476816755:android:cdc9b292e9b57134bf1906",
+>>>>>>> 2386a0e37218ec338f5e7f9075805d32c9d7c963
         "android_client_info": {
           "package_name": "com.example.service_project"
         }
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
+          "client_id": "95700117341-c48voh8u3v56p2e5kdfhin6jm3u7e9h1.apps.googleusercontent.com",
+=======
           "client_id": "956476816755-qdepn3u7g9qkg4ovac3bac4dqkr9u10b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -77,19 +91,28 @@
         },
         {
           "client_id": "956476816755-jl7n1mderkqjch97tm5o7dnh1o9h8o3s.apps.googleusercontent.com",
+>>>>>>> 2386a0e37218ec338f5e7f9075805d32c9d7c963
           "client_type": 3
         }
       ],
       "api_key": [
         {
+<<<<<<< HEAD
+          "current_key": "AIzaSyDw_CG-zqlHEGUiX855cF3DCb9og7vNyjA"
+=======
           "current_key": "AIzaSyDF3GYUtZlNgtwqc21YHYBZHI3BEguX22Q"
+>>>>>>> 2386a0e37218ec338f5e7f9075805d32c9d7c963
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+<<<<<<< HEAD
+              "client_id": "95700117341-c48voh8u3v56p2e5kdfhin6jm3u7e9h1.apps.googleusercontent.com",
+=======
               "client_id": "956476816755-jl7n1mderkqjch97tm5o7dnh1o9h8o3s.apps.googleusercontent.com",
+>>>>>>> 2386a0e37218ec338f5e7f9075805d32c9d7c963
               "client_type": 3
             }
           ]

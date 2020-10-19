@@ -11,8 +11,6 @@ import android.widget.LinearLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.sql.Time;
-
 public class MainActivity extends AppCompatActivity {
 
     // Write a message to the database
@@ -37,14 +35,6 @@ public class MainActivity extends AppCompatActivity {
         set_up();
     }
     public void set_up(){
-        Button Time_card = new Button(this);
-        Time_card.setText("TIME CARD");
-        Time_card.setHeight(ScreenHeight/4);
-        Time_card.setOnClickListener(v1->{
-            Intent next_page = new Intent(this,time_card.class);
-            startActivity(next_page);
-        });
-        ll.addView(Time_card);
         for (int i =0;i<10;i++){
             Button b = new Button(this);
             b.setText("Park"+ Integer.toString(i));
@@ -55,7 +45,5 @@ public class MainActivity extends AppCompatActivity {
             });
             ll.addView(b);
         }
-
-
     }
 }

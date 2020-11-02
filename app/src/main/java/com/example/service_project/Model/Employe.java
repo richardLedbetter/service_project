@@ -15,5 +15,8 @@ public class Employe {
     public Employe(){
        // Default constructor required for calls to DataSnapshot.getValue(Employe.class)
     }
+    public void push_employee(){
+
+    }
 
 }

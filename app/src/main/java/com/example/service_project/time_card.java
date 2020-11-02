@@ -10,6 +10,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.service_project.Model.Employe;
+
 public class time_card extends AppCompatActivity {
     LinearLayout ll;
     @Override
@@ -20,6 +22,7 @@ public class time_card extends AppCompatActivity {
         pop();
     }
     public void pop(){
+
         TextView t = new TextView(this);
         t.setText("enter employee code");
         ll.addView(t);

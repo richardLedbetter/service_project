@@ -35,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
         set_up();
     }
     public void set_up(){
+        Button b2 = new Button(this);
+        b2.setText("time card");
+        b2.setHeight(ScreenHeight/5);
+        b2.setOnClickListener(v1->{
+            Intent next_page = new Intent(this,time_card.class);
+            startActivity(next_page);
+        });
+        ll.addView(b2);
         for (int i =0;i<10;i++){
             Button b = new Button(this);
             b.setText("Park"+ Integer.toString(i));

@@ -59,9 +59,11 @@ public class MainActivity extends AppCompatActivity {
     private void writeNewPark(String name, String location) {
         Park parck1 = new Park(name, location);
 
+        //send park object to database
         mDatabase.child("parks").child(name).setValue(parck1);
     }
     public List<Park> getparks(){
+        
         mDatabase =FirebaseDatabase.getInstance().getReference().child("parks");
         parks = new ArrayList<>();
 

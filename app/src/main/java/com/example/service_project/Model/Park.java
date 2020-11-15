@@ -9,6 +9,9 @@ public class Park {
         this.location = location;
     }
 
+    public Park() {
+    }
+
     public String getName() {
         return name;
     }

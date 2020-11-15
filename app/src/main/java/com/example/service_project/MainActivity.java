@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
     //list of parks
     List<Park> parks;
 
-// ...
-
 
     LinearLayout ll;
     int ScreenHeight,ScreenWidth;
@@ -38,23 +36,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        String name = "test name4";
-        String location= "test location4";
-        writeNewPark(name,location);
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ll = findViewById(R.id.ll);
         displayMetrics = this.getResources().getDisplayMetrics();
-        ScreenWidth = displayMetrics.widthPixels;
-        ScreenHeight = displayMetrics.heightPixels;
-        //get list of all parks
-        parks= getparks();
+        ScreenWidth = (int) (displayMetrics.widthPixels);
+        ScreenHeight = (int) (displayMetrics.heightPixels );
 
         set_up();
     }
+
     //used to add new parks
     private void writeNewPark(String name, String location) {
         Park parck1 = new Park(name, location);
@@ -63,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         mDatabase.child("parks").child(name).setValue(parck1);
     }
     public List<Park> getparks(){
-        
+
         mDatabase =FirebaseDatabase.getInstance().getReference().child("parks");
         parks = new ArrayList<>();
 
@@ -95,16 +86,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     @SuppressLint("SetTextI18n")
+
     public void set_up(){
-
-        System.out.println("Error Cancelled");
-
-
-        System.out.println("info i am looking for "+ this.parks.size());
-        for (int i = 0; i< this.parks.size(); i++){
+        Button b2 = new Button(this);
+        b2.setText("time card");
+        b2.setHeight(ScreenHeight/5);
+        b2.setOnClickListener(v1->{
+            Intent next_page = new Intent(this,time_card.class);
+            startActivity(next_page);
+        });
+        ll.addView(b2);
+        for (int i =0;i<10;i++){
             Button b = new Button(this);
-            Park park = this.parks.get(i);
-            b.setText("Park"+ park.getName());
+            b.setText("Park"+ Integer.toString(i));
             b.setHeight(ScreenHeight/5);
             b.setOnClickListener(v1->{
                 Intent next_page = new Intent(this,park_detail.class);

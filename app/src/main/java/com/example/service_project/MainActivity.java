@@ -5,26 +5,42 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.service_project.Model.Park;
+import com.example.service_project.Model.TimeCard;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicMarkableReference;
 
 public class MainActivity extends AppCompatActivity {
 
     //import firebase
-    private DatabaseReference mDatabase;
+
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference ref = database.getReference("parks_rec");
+
+
+    // Create a storage reference from our app
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReference();
     //list of parks
     List<Park> parks;
 
@@ -34,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     DisplayMetrics displayMetrics;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -42,23 +58,53 @@ public class MainActivity extends AppCompatActivity {
         displayMetrics = this.getResources().getDisplayMetrics();
         ScreenWidth = (int) (displayMetrics.widthPixels);
         ScreenHeight = (int) (displayMetrics.heightPixels );
+        writeNewPark("rod","loc");
 
         set_up();
     }
 
     //used to add new parks
     private void writeNewPark(String name, String location) {
-        Park parck1 = new Park(name, location);
-
         //send park object to database
-        mDatabase.child("parks").child(name).setValue(parck1);
+        DatabaseReference parkRef = ref.child("parks");
+        DatabaseReference newPostRef = parkRef.push();
+        newPostRef.setValue(new Park(name, location));
+
     }
+    private void writeNewTimeCard(String employecode,String singinstatus , String department, String lunchbreak){
+        // send TimeCard obj to database
+        DatabaseReference timecadRef = ref.child("timecard");
+        DatabaseReference newtimecardRef = timecadRef.push();
+        newtimecardRef.setValue(new TimeCard(employecode,singinstatus,department,lunchbreak));
+
+
+    }
+    private void wrireNewPic(String path){
+        Uri file = Uri.fromFile(new File(path));
+        StorageReference riversRef = storageRef.child("images/"+file.getLastPathSegment());
+        UploadTask uploadTask = riversRef.putFile(file);
+
+        // Register observers to listen for when the download is done or if it fails
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle unsuccessful uploads
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                // ...
+            }
+        });
+    }
+
     public List<Park> getparks(){
 
-        mDatabase =FirebaseDatabase.getInstance().getReference().child("parks");
+        ref =FirebaseDatabase.getInstance().getReference().child("parks");
         parks = new ArrayList<>();
 
-        mDatabase.addValueEventListener(new ValueEventListener() {
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 

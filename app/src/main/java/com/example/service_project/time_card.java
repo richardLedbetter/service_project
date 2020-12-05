@@ -12,7 +12,8 @@ import android.widget.TextView;
 
 import com.example.service_project.Model.Employe;
 
-public class time_card extends AppCompatActivity {
+public class
+time_card extends AppCompatActivity {
     LinearLayout ll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

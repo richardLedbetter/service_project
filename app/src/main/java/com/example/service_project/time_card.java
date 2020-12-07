@@ -4,23 +4,36 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Gravity;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.service_project.Model.Employe;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class
 time_card extends AppCompatActivity {
     LinearLayout ll;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("message");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_card);
+
         ll = findViewById(R.id.form);
         pop();
+        myRef.child("message").child("");
+    }
+    public void upload (){
+        //needs code for upload
+        //datatypes
+        //string 5x
     }
     public void pop(){
 
@@ -73,6 +86,10 @@ time_card extends AppCompatActivity {
             Lunch.addView(tmp);
         }
         ll.addView(Lunch);
+        Button Submit = new Button(this);
+        Submit.setHeight(200);
+        Submit.setText("SUBMIT");
+        ll.addView(Submit);
 
     }
 

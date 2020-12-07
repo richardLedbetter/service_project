@@ -34,8 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
     //import firebase
 
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference ref = database.getReference("parks_rec");
+    private DatabaseReference mDatabase;
+// ...
+
 
 
     // Create a storage reference from our app
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     DisplayMetrics displayMetrics;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mDatabase = FirebaseDatabase.getInstance().getReference();;
 
 
         super.onCreate(savedInstanceState);
@@ -66,16 +68,16 @@ public class MainActivity extends AppCompatActivity {
     //used to add new parks
     private void writeNewPark(String name, String location) {
         //send park object to database
-        DatabaseReference parkRef = ref.child("parks");
+        DatabaseReference parkRef = mDatabase.child("parks");
         DatabaseReference newPostRef = parkRef.push();
         newPostRef.setValue(new Park(name, location));
 
     }
     private void writeNewTimeCard(String employecode,String singinstatus , String department, String lunchbreak){
         // send TimeCard obj to database
-        DatabaseReference timecadRef = ref.child("timecard");
-        DatabaseReference newtimecardRef = timecadRef.push();
-        newtimecardRef.setValue(new TimeCard(employecode,singinstatus,department,lunchbreak));
+        TimeCard timeCard = new(employecode,singinstatus,department,lunchbreak)
+
+        mDatabase.child("timecards").child(employecode).setValue(timeCard);
 
 
     }

@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void writeNewTimeCard(String employecode,String singinstatus , String department, String lunchbreak){
         // send TimeCard obj to database
-        TimeCard timeCard = new(employecode,singinstatus,department,lunchbreak)
+        TimeCard timeCard = new TimeCard(employecode,singinstatus,department,lunchbreak);
 
         mDatabase.child("timecards").child(employecode).setValue(timeCard);
 
@@ -103,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
 
     public List<Park> getparks(){
 
-        ref =FirebaseDatabase.getInstance().getReference().child("parks");
+        mDatabase =FirebaseDatabase.getInstance().getReference().child("parks");
         parks = new ArrayList<>();
 
-        ref.addValueEventListener(new ValueEventListener() {
+        mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 

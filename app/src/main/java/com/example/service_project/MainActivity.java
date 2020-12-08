@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         displayMetrics = this.getResources().getDisplayMetrics();
         ScreenWidth = (int) (displayMetrics.widthPixels);
         ScreenHeight = (int) (displayMetrics.heightPixels );
-        writeNewPark("rod","loc");
 
         set_up();
     }

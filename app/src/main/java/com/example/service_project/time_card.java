@@ -8,6 +8,7 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -70,7 +71,7 @@ time_card extends AppCompatActivity {
         Radio.setHeight(150);
         Radio.setText("Signing in");
         ll.addView(Radio);
-        RadioButton R = new RadioButton(this);
+        CheckBox R = new CheckBox(this);
         //R.toggle();
         ll.addView(R);
 

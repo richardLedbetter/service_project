@@ -116,6 +116,7 @@ public class add_issue extends AppCompatActivity {
     public void pop(){
         Button add = new Button(this);
         add.setWidth(300);
+        add.setText("SUBMIT");
         add.setOnClickListener(v1->{
             Runnable task2 = new Runnable() {
                 @Override
@@ -134,6 +135,7 @@ public class add_issue extends AppCompatActivity {
 
         Button photo = new Button(this);
         photo.setWidth(300);
+        photo.setText("Select photo");
         photo.setOnClickListener(v1->{
             openGallery();
         });
